@@ -6,19 +6,23 @@ public class LeapYearShould {
     LeapYear leapYear = new LeapYear();
 
     @Test
-    void isDivisibleBy4(){
+    void isALeapYearIfDivisibleBy4(){
         Assertions.assertEquals(true, leapYear.isLeapYear(4));
     }
 
     @Test
-    void isNotDivisibleBy4() {
+    void isNotALeapYearIfNotDivisibleBy4() {
         Assertions.assertEquals(false, leapYear.isLeapYear(2));
     }
 
     @Test
-    void isDivisibleBy400(){
+    void isALeapYearIfDivisibleBy400(){
         Assertions.assertEquals(true, leapYear.isLeapYear(400));
     }
 
+    @Test
+    void isNotALeapYearIfDivisibleBy100ButNot400() {
+        Assertions.assertEquals(false, leapYear.isLeapYear(100));
+    }
 
 }
