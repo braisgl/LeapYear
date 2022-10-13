@@ -1,9 +1,19 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LeapYearShould {
 
-    @Test
-    void sample(){
+    LeapYear leapYear = new LeapYear();
 
+    @Test
+    void isDivisibleBy4(){
+        Assertions.assertEquals(true, leapYear.isLeapYear(4));
     }
+
+    @Test
+    void isNotDivisibleBy4() {
+        Assertions.assertEquals(false, leapYear.isLeapYear(2));
+    }
+
+
 }
