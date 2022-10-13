@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class YearShould {
 
@@ -30,4 +31,17 @@ public class YearShould {
         Assertions.assertEquals(false, year.isLeapYear());
     }
 
+    @ParameterizedTest
+    @CsvSource({"1996", "1600"})
+    void parametrizedTestTrue(int number) {
+        year = new Year(number);
+        Assertions.assertTrue(year.isLeapYear());
+    }
+
+    @ParameterizedTest
+    @CsvSource({"1997", "1800"})
+    void parametrizedTestFalse(int number) {
+        year = new Year(number);
+        Assertions.assertFalse(year.isLeapYear());
+    }
 }
