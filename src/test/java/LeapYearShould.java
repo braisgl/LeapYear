@@ -15,5 +15,10 @@ public class LeapYearShould {
         Assertions.assertEquals(false, leapYear.isLeapYear(2));
     }
 
+    @Test
+    void isDivisibleBy400(){
+        Assertions.assertEquals(true, leapYear.isLeapYear(400));
+    }
+
 
 }
